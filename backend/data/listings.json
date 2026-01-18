@@ -1,24 +1,41 @@
-
 [
   {
-    "id": 1,
     "name": "Sunny Apartments",
     "price": 500,
     "location": "East Legon",
     "borehole": true,
     "available_rooms": 2,
-    "contact": "024xxxxxxx",
-    "total_rooms": 5
+    "total_rooms": 4,
+    "roommate_sharing": true,
+    "spots_needed": 1,
+    "contact": "0241234567",
+    "latitude": 5.645,
+    "longitude": -0.185
   },
   {
-    "id": 2,
-    "name": "Green Hostel",
+    "name": "Greenview Hostel",
     "price": 300,
-    "location": "Legon",
+    "location": "Airport",
     "borehole": false,
-    "available_rooms": 1,
-    "contact": "020xxxxxxx",
+    "available_rooms": 0,
     "total_rooms": 3,
-    "_comment": "add actual apartments data in this file in the same format as above"
+    "roommate_sharing": false,
+    "spots_needed": 0,
+    "contact": "0249876543",
+    "latitude": 5.618,
+    "longitude": -0.165
+  },
+  {
+    "name": "Lakeview Apartments",
+    "price": 700,
+    "location": "Legon",
+    "borehole": true,
+    "available_rooms": 3,
+    "total_rooms": 5,
+    "roommate_sharing": true,
+    "spots_needed": 2,
+    "contact": "0245554321",
+    "latitude": 5.650,
+    "longitude": -0.200
   }
 ]
