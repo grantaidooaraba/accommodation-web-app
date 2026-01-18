@@ -1,0 +1,22 @@
+
+[
+  {
+    "id": 1,
+    "name": "Sunny Apartments",
+    "price": 500,
+    "location": "East Legon",
+    "borehole": true,
+    "available_rooms": 2,
+    "contact": "024xxxxxxx"
+  },
+  {
+    "id": 2,
+    "name": "Green Hostel",
+    "price": 300,
+    "location": "Legon",
+    "borehole": false,
+    "available_rooms": 1,
+    "contact": "020xxxxxxx",
+    "_comment": "add actual apartments data in this file in the same format as above"
+  }
+]
