@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const fs = require("fs");
 const app = express();
-const PORT = 5000;
+const PORT = 5000; //change if 5000 conflicts
 
 // Middleware
 app.use(cors());

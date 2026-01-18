@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accommodation Finder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Available Accommodations</h1>
+
+  <!-- Filter Section -->
+  <div id="filters">
+    <input type="text" id="locationFilter" placeholder="Location">
+    <input type="number" id="maxPrice" placeholder="Max Price">
+    <select id="boreholeFilter">
+      <option value="">Borehole?</option>
+      <option value="true">Yes</option>
+      <option value="false">No</option>
+    </select>
+    <button id="applyFilters">Apply Filters</button>
+    <button id="resetFilters">Reset Filters</button>
+  </div>
+
+  <div id="listings-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
