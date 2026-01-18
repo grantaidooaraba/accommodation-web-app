@@ -7,7 +7,8 @@
     "location": "East Legon",
     "borehole": true,
     "available_rooms": 2,
-    "contact": "024xxxxxxx"
+    "contact": "024xxxxxxx",
+    "total_rooms": 5
   },
   {
     "id": 2,
@@ -17,6 +18,7 @@
     "borehole": false,
     "available_rooms": 1,
     "contact": "020xxxxxxx",
+    "total_rooms": 3,
     "_comment": "add actual apartments data in this file in the same format as above"
   }
 ]

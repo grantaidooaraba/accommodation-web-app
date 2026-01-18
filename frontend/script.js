@@ -11,7 +11,12 @@ let listingsData = [];
 fetch("http://localhost:5000/listings")
   .then(res => res.json())
   .then(data => {
-    listingsData = data;
+    // Force numbers for total_rooms and available_rooms to prevent NaN
+    listingsData = data.map(listing => ({
+      ...listing,
+      total_rooms: Number(listing.total_rooms),
+      available_rooms: Number(listing.available_rooms)
+    }));
     displayListings(listingsData);
   })
   .catch(err => {
@@ -19,14 +24,19 @@ fetch("http://localhost:5000/listings")
     console.error(err);
   });
 
-// Display listings
+// Function to display listings in cards
 function displayListings(data) {
   container.innerHTML = "";
   if (data.length === 0) {
     container.innerHTML = "<p>No listings found.</p>";
     return;
   }
+
   data.forEach(listing => {
+    const totalRooms = listing.total_rooms;
+    const availableRooms = listing.available_rooms;
+    const filledRooms = totalRooms - availableRooms;
+
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
@@ -34,7 +44,7 @@ function displayListings(data) {
       <p><strong>Price:</strong> $${listing.price}</p>
       <p><strong>Location:</strong> ${listing.location}</p>
       <p><strong>Borehole:</strong> ${listing.borehole ? "Yes" : "No"}</p>
-      <p><strong>Available Rooms:</strong> ${listing.available_rooms}</p>
+      <p><strong>Available Rooms:</strong> ${availableRooms} / ${totalRooms} (Occupied: ${filledRooms})</p>
       <p><strong>Contact:</strong> ${listing.contact}</p>
     `;
     container.appendChild(card);
@@ -61,6 +71,9 @@ applyBtn.addEventListener("click", () => {
     filtered = filtered.filter(l => l.borehole.toString() === borehole);
   }
 
+  // Only show listings with available rooms
+  filtered = filtered.filter(l => l.available_rooms > 0);
+
   displayListings(filtered);
 });
 
@@ -71,3 +84,4 @@ resetBtn.addEventListener("click", () => {
   boreholeSelect.value = "";
   displayListings(listingsData);
 });
+

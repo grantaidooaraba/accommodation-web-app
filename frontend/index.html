@@ -3,27 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Accommodation Finder</title>
+  <title>Accommodation Finder - Login</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Available Accommodations</h1>
-
-  <!-- Filter Section -->
-  <div id="filters">
-    <input type="text" id="locationFilter" placeholder="Location">
-    <input type="number" id="maxPrice" placeholder="Max Price">
-    <select id="boreholeFilter">
-      <option value="">Borehole?</option>
-      <option value="true">Yes</option>
-      <option value="false">No</option>
-    </select>
-    <button id="applyFilters">Apply Filters</button>
-    <button id="resetFilters">Reset Filters</button>
+  <div class="login-container">
+    <h1>Welcome to Accommodation Finder</h1>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
   </div>
 
-  <div id="listings-container"></div>
-
-  <script src="script.js"></script>
+  <script>
+    const form = document.getElementById("loginForm");
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      if(username.trim() === "") {
+        alert("Enter a username");
+        return;
+      }
+      // Redirect to listings page
+      window.location.href = "listings.html";
+    });
+  </script>
 </body>
 </html>
